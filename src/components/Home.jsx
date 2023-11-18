@@ -8,7 +8,7 @@ import { headContainerAnimation, headContentAnimation, headTextAnimation, slideA
 import Image from "next/image"
 import { CustomButton } from "./ui"
 
-
+// ffff
 const Home = () => {
 
     const snap = useSnapshot(state)
