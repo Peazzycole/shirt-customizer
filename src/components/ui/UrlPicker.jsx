@@ -20,13 +20,13 @@ const UrlPicker = ({ prompt, setPrompt, handleSubmit }) => {
                 <>
                     <CustomButton
                         type='outline'
-                        title='AI Logo'
+                        title='Url Logo'
                         handleClick={() => handleSubmit('logo')}
                         customStyles='text-xs flex-1'
                     />
                     <CustomButton
                         type='filled'
-                        title='AI Full'
+                        title='Url Full'
                         handleClick={() => handleSubmit('full')}
                         customStyles='text-xs flex-1'
                     />
