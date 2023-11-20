@@ -9,14 +9,13 @@ import state from "@/store"
 import { downloadCanvasToImage, reader } from "@/config/helpers"
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants'
 import { fadeAnimation, slideAnimation } from "@/config/motion"
-import { AIPicker, ColorPicker, CustomButton, FilePicker, Tab } from "./ui"
+import { UrlPicker, ColorPicker, CustomButton, FilePicker, Tab } from "./ui"
 
 
 const Customizer = () => {
 
     const [file, setFile] = useState('')
     const [prompt, setPrompt] = useState('')
-    const [generateImg, setGenerateImg] = useState(false)
     const [activeEditorTab, setActiveEditorTab] = useState('')
     const [activeFilterTab, setActiveFilterTab] = useState({
         logoShirt: true,
@@ -35,11 +34,10 @@ const Customizer = () => {
                     setFile={setFile}
                     readFile={readFile}
                 />
-            case "aipicker":
-                return <AIPicker
+            case "urlpicker":
+                return <UrlPicker
                     prompt={prompt}
                     setPrompt={setPrompt}
-                    generateImg={generateImg}
                     handleSubmit={handleSubmit}
                 />
             default:
@@ -49,27 +47,8 @@ const Customizer = () => {
 
     const handleSubmit = async (type) => {
         if (!prompt) return alert("please enter a prompt")
-
-        // ------for Openai image generation-------- //
-        try {
-            setGenerateImg(true)
-            // const response = await fetch('/api/v1/dalle', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ prompt })
-            // })
-
-            // const data = await response.json()
-
-            // console.log(data)
-
-            // handleDecals(type, `data:image/png;base64,${data.photo}`)
-        } catch (error) {
-            alert(error)
-        } finally {
-            setGenerateImg(false)
-            setActiveEditorTab("")
-        }
+        handleDecals(type, prompt)
+        setPrompt('')
     }
 
     const handleDecals = (type, result) => {
@@ -138,7 +117,10 @@ const Customizer = () => {
                         <CustomButton
                             type="filled"
                             title="Go Back"
-                            handleClick={() => state.intro = true}
+                            handleClick={() => {
+                                state.intro = true
+                                setActiveEditorTab('')
+                            }}
                             customStyles="w-fit px-4 py-2.5 font-bold text-sm"
                         />
                     </motion.div>
@@ -146,6 +128,7 @@ const Customizer = () => {
                     <motion.div
                         className="filtertabs-container"
                         {...slideAnimation('up')}
+                        onClick={() => setActiveEditorTab('')}
                     >
                         {FilterTabs.map((tab) => (
                             <Tab

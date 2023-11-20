@@ -8,7 +8,6 @@ import { headContainerAnimation, headContentAnimation, headTextAnimation, slideA
 import Image from "next/image"
 import { CustomButton } from "./ui"
 
-// ffff
 const Home = () => {
 
     const snap = useSnapshot(state)
@@ -31,7 +30,7 @@ const Home = () => {
                     <motion.div className="home-content" {...headContainerAnimation}>
                         <motion.div {...headTextAnimation}>
                             <h1 className="head-text">
-                                LETS&apos;S <br className="xl:block hidden" /> DO IT
+                                LET&apos;S <br className="xl:block hidden" /> DO IT
                             </h1>
                         </motion.div>
                         <motion.div className="flex flex-col gap-5" {...headContentAnimation}>

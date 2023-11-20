@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/canvas/Shirt.jsx", "src/canvas/CameraRig.jsx", "src/server/index.mjs", "src/canvas/index.jsx", "src/canvas/Backdrop.jsx", "src/components/Home.jsx", "src/components/Customizer.jsx", "src/components/ui/Tab.jsx", "src/components/ui/index.jsx", "src/components/ui/FilePicker.jsx", "src/components/ui/CustomButton.jsx", "src/components/ui/ColorPicker.jsx", "src/components/ui/AIPicker.jsx", "src/store/index.js", "src/config/config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/canvas/Shirt.jsx", "src/canvas/CameraRig.jsx", "src/server/index.mjs", "src/canvas/index.jsx", "src/canvas/Backdrop.jsx", "src/components/Home.jsx", "src/components/Customizer.jsx", "src/components/ui/Tab.jsx", "src/components/ui/index.jsx", "src/components/ui/FilePicker.jsx", "src/components/ui/CustomButton.jsx", "src/components/ui/ColorPicker.jsx", "src/components/ui/UrlPicker.jsx", "src/store/index.js", "src/config/config.js"],
   "exclude": ["node_modules"]
 }

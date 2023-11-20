@@ -8,7 +8,7 @@ export const EditorTabs = [
     icon: "/file.png",
   },
   {
-    name: "aipicker",
+    name: "urlpicker",
     icon: "/ai.png",
   },
 ];
