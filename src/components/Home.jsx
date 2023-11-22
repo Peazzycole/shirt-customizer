@@ -33,7 +33,7 @@ const Home = () => {
                                 LET&apos;S <br className="xl:block hidden" /> DO IT
                             </h1>
                         </motion.div>
-                        <motion.div className="flex flex-col gap-5" {...headContentAnimation}>
+                        <motion.div className="flex flex-col gap-5 -mt-[40px]" {...headContentAnimation}>
                             <p className="max-w-md font-normal text-gray-600 text-base">
                                 Create your Unique and exclusive shurt with our brand-new 3D customization tool <strong>Unleash your imagination</strong> and define your own style
                             </p>
